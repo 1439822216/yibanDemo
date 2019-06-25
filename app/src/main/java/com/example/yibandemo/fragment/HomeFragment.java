@@ -12,6 +12,8 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.example.yibandemo.R;
+import com.example.yibandemo.adapter.GridBaseAdapter;
+import com.example.yibandemo.bean.GridBean;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
@@ -25,6 +27,7 @@ public class HomeFragment extends Fragment {
     Banner banner;
     List<Integer> images;
     GridView gridView;
+    List<GridBean> gridBeans = new ArrayList<>();
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -40,6 +43,8 @@ public class HomeFragment extends Fragment {
         banner.setImages(images);
         banner.setImageLoader(new GlideImageLoader());
         banner.start();
+        GridBaseAdapter gridBaseAdapter = new GridBaseAdapter(getActivity(),gridBeans);
+        gridView.setAdapter(gridBaseAdapter);
         return view;
     }
 
@@ -50,6 +55,14 @@ public class HomeFragment extends Fragment {
        // images.add(R.drawable.yb3);
         images.add(R.drawable.yb4);
         images.add(R.drawable.yb5);
+        gridBeans.add(new GridBean("易喵喵",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("广东高校易班",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("粤易班",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("易班熊",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("校园好声音",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("精品课程",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("能力测试",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("易培训",R.drawable.ic_launcher_background));
     }
 
     private void intiView(View view) {

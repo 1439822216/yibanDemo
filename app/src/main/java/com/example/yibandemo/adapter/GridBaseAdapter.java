@@ -5,15 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.yibandemo.R;
 import com.example.yibandemo.bean.GridBean;
+import com.example.yibandemo.utils.OvalImageView;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class GridBaseAdapter extends BaseAdapter {
     Context context;
-    List<GridBean> list;
+    List<GridBean> list = new ArrayList<>();
     public GridBaseAdapter(Context context, List<GridBean> list) {
         this.context = context;
         this.list=list;
@@ -36,8 +42,15 @@ public class GridBaseAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        TextView textView;
+        CircleImageView circleImageView;
         convertView = LayoutInflater.from(context).inflate(R.layout.grid_item,parent,false);
+        textView =  convertView.findViewById(R.id.textView);
+        circleImageView = convertView.findViewById(R.id.circleImageView);
+        textView.setText(list.get(position).getTitle());
+        circleImageView.setImageResource(list.get(position).getImage());
 
-        return null;
+
+        return convertView;
     }
 }
