@@ -3,7 +3,12 @@ package com.example.yibandemo.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +33,10 @@ public class HomeFragment extends Fragment {
     List<Integer> images;
     GridView gridView;
     List<GridBean> gridBeans = new ArrayList<>();
+    TabLayout tl_home;
+    ViewPager vp_home;
+    String[] titles;
+    List<Fragment> list = new ArrayList<>();
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -45,6 +54,9 @@ public class HomeFragment extends Fragment {
         banner.start();
         GridBaseAdapter gridBaseAdapter = new GridBaseAdapter(getActivity(),gridBeans);
         gridView.setAdapter(gridBaseAdapter);
+        MytabAdapter adapter = new MytabAdapter(getChildFragmentManager());
+        vp_home.setAdapter(adapter);
+        tl_home.setupWithViewPager(vp_home);
         return view;
     }
 
@@ -55,19 +67,50 @@ public class HomeFragment extends Fragment {
        // images.add(R.drawable.yb3);
         images.add(R.drawable.yb4);
         images.add(R.drawable.yb5);
-        gridBeans.add(new GridBean("易喵喵",R.drawable.icon1));
-        gridBeans.add(new GridBean("广东高校易班",R.drawable.icon2));
-        gridBeans.add(new GridBean("粤易班",R.drawable.icon3));
-        gridBeans.add(new GridBean("易班熊",R.drawable.icon4));
-        gridBeans.add(new GridBean("校园好声音",R.drawable.icon5));
-        gridBeans.add(new GridBean("精品课程",R.drawable.icon6));
-        gridBeans.add(new GridBean("能力测试",R.drawable.icon7));
-        gridBeans.add(new GridBean("易培训",R.drawable.icon8));
+        gridBeans.clear();
+        gridBeans.add(new GridBean("易喵喵",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("广东高校易班",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("粤易班",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("易班熊",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("校园好声音",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("精品课程",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("能力测试",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("易培训",R.drawable.ic_launcher_background));
+        titles = new String[]{"学校","易班推荐","学院"};
+        list.clear();
+        list.add(new SchoolFragment());
+        list.add(new RecommendFragment());
+        list.add(new CollegeFragment());
+
     }
 
     private void intiView(View view) {
         banner = view.findViewById(R.id.banner);
         gridView = view.findViewById(R.id.gridView);
+        tl_home = view.findViewById(R.id.tl_home);
+        vp_home = view.findViewById(R.id.vp_home);
+    }
+    class MytabAdapter extends FragmentPagerAdapter{
+
+        public MytabAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int i) {
+            return list.get(i);
+        }
+
+        @Override
+        public int getCount() {
+            return list.size();
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position];
+        }
     }
     class GlideImageLoader extends ImageLoader {
 
