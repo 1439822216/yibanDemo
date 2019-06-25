@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -23,6 +24,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
     Banner banner;
     List<Integer> images;
+    GridView gridView;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -52,7 +54,7 @@ public class HomeFragment extends Fragment {
 
     private void intiView(View view) {
         banner = view.findViewById(R.id.banner);
-
+        gridView = view.findViewById(R.id.gridView);
     }
     class GlideImageLoader extends ImageLoader {
 
