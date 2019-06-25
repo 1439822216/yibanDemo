@@ -9,6 +9,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +21,9 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.yibandemo.R;
 import com.example.yibandemo.adapter.GridBaseAdapter;
+import com.example.yibandemo.adapter.SchoolAdapter2;
 import com.example.yibandemo.bean.GridBean;
+import com.example.yibandemo.bean.SchoolBean;
 import com.youth.banner.Banner;
 import com.youth.banner.loader.ImageLoader;
 
@@ -33,10 +38,10 @@ public class HomeFragment extends Fragment {
     List<Integer> images;
     GridView gridView;
     List<GridBean> gridBeans = new ArrayList<>();
-    TabLayout tl_home;
-    ViewPager vp_home;
     String[] titles;
     List<Fragment> list = new ArrayList<>();
+    RecyclerView rv_school;
+    List<SchoolBean> schoolBeanList;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -54,9 +59,10 @@ public class HomeFragment extends Fragment {
         banner.start();
         GridBaseAdapter gridBaseAdapter = new GridBaseAdapter(getActivity(),gridBeans);
         gridView.setAdapter(gridBaseAdapter);
-        MytabAdapter adapter = new MytabAdapter(getChildFragmentManager());
-        vp_home.setAdapter(adapter);
-        tl_home.setupWithViewPager(vp_home);
+        SchoolAdapter2 adapter2 = new SchoolAdapter2(getActivity(),schoolBeanList);
+        rv_school.setLayoutManager(new LinearLayoutManager(getActivity()));
+        rv_school.setAdapter(adapter2);
+       rv_school.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
         return view;
     }
 
@@ -77,41 +83,21 @@ public class HomeFragment extends Fragment {
         gridBeans.add(new GridBean("能力测试",R.drawable.icon7));
         gridBeans.add(new GridBean("易培训",R.drawable.icon8));
         titles = new String[]{"学校","易班推荐","学院"};
-        list.clear();
-        list.add(new SchoolFragment());
-        list.add(new RecommendFragment());
-        list.add(new CollegeFragment());
-
+        schoolBeanList = new ArrayList<>();
+        schoolBeanList.clear();
+        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
+        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
+        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
+        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
+        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
     }
 
     private void intiView(View view) {
         banner = view.findViewById(R.id.banner);
         gridView = view.findViewById(R.id.gridView);
-        tl_home = view.findViewById(R.id.tl_home);
-        vp_home = view.findViewById(R.id.vp_home);
+        rv_school = view.findViewById(R.id.rv_school);
     }
-    class MytabAdapter extends FragmentPagerAdapter{
 
-        public MytabAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int i) {
-            return list.get(i);
-        }
-
-        @Override
-        public int getCount() {
-            return list.size();
-        }
-
-        @Nullable
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return titles[position];
-        }
-    }
     class GlideImageLoader extends ImageLoader {
 
         @Override

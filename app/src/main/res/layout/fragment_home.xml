@@ -7,7 +7,10 @@
     tools:context="fragment.HomeFragment">
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+
+       >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -29,22 +32,39 @@
                 android:numColumns="4">
 
             </GridView>
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tl_home"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                app:tabIndicatorColor="#01a5ed"
-                app:tabSelectedTextColor="#01a5ed"
-                >
 
-            </android.support.design.widget.TabLayout>
-            <android.support.v4.view.ViewPager
-                android:id="@+id/vp_home"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            </android.support.v4.view.ViewPager>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/icon2"
+                        android:layout_marginStart="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="广东职业技术学院"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:maxLines="1"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_school"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    ></android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
