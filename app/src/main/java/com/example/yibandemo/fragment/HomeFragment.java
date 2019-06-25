@@ -55,14 +55,14 @@ public class HomeFragment extends Fragment {
        // images.add(R.drawable.yb3);
         images.add(R.drawable.yb4);
         images.add(R.drawable.yb5);
-        gridBeans.add(new GridBean("易喵喵",R.drawable.ic_launcher_background));
-        gridBeans.add(new GridBean("广东高校易班",R.drawable.ic_launcher_background));
-        gridBeans.add(new GridBean("粤易班",R.drawable.ic_launcher_background));
-        gridBeans.add(new GridBean("易班熊",R.drawable.ic_launcher_background));
-        gridBeans.add(new GridBean("校园好声音",R.drawable.ic_launcher_background));
-        gridBeans.add(new GridBean("精品课程",R.drawable.ic_launcher_background));
-        gridBeans.add(new GridBean("能力测试",R.drawable.ic_launcher_background));
-        gridBeans.add(new GridBean("易培训",R.drawable.ic_launcher_background));
+        gridBeans.add(new GridBean("易喵喵",R.drawable.icon1));
+        gridBeans.add(new GridBean("广东高校易班",R.drawable.icon2));
+        gridBeans.add(new GridBean("粤易班",R.drawable.icon3));
+        gridBeans.add(new GridBean("易班熊",R.drawable.icon4));
+        gridBeans.add(new GridBean("校园好声音",R.drawable.icon5));
+        gridBeans.add(new GridBean("精品课程",R.drawable.icon6));
+        gridBeans.add(new GridBean("能力测试",R.drawable.icon7));
+        gridBeans.add(new GridBean("易培训",R.drawable.icon8));
     }
 
     private void intiView(View view) {
