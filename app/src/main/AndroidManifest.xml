@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yibandemo">
-
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".activity.UserActivity"></activity>
-        <activity android:name=".activity.SplashActivity">
-
-        </activity>
+        android:theme="@style/Theme.Design.Light.NoActionBar">
+        <activity android:name=".activity.WebActivity"></activity>
+        <activity android:name=".activity.UserActivity" />
+        <activity android:name=".activity.SplashActivity"></activity>
         <activity android:name=".activity.HandlerActivity" />
         <activity android:name=".activity.GuideActivity" />
         <activity android:name=".activity.RegActivity" />

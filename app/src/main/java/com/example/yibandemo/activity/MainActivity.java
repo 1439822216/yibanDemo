@@ -7,6 +7,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
+import android.widget.TextView;
 
 import com.example.yibandemo.R;
 import com.example.yibandemo.fragment.FaxianFragment;
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
     String[] titles;
+    ImageView iv_menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +46,20 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText(titles[1]).setIcon(R.drawable.menu_liaotian_selector));
         tabLayout.addTab(tabLayout.newTab().setText(titles[2]).setIcon(R.drawable.menu_lianxiren_selector));
         tabLayout.addTab(tabLayout.newTab().setText(titles[3]).setIcon(R.drawable.menu_faxian_selector));
+        iv_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(getApplicationContext(),v);
+                popupMenu.getMenuInflater().inflate(R.menu.menu,popupMenu.getMenu());
+                popupMenu.show();
+            }
+        });
     }
 
     private void intiView() {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
+        iv_menu = findViewById(R.id.iv_menu);
     }
 
     class MyFragmentAdapter extends FragmentPagerAdapter{

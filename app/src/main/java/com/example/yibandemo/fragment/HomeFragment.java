@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
         SchoolAdapter2 adapter2 = new SchoolAdapter2(getActivity(),schoolBeanList);
         rv_school.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv_school.setAdapter(adapter2);
-       rv_school.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+        rv_school.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
         return view;
     }
 
