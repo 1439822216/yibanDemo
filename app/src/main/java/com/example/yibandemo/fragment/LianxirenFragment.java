@@ -42,9 +42,9 @@ public class LianxirenFragment extends Fragment {
 
     private void initData() {
         list.clear();
-        list.add(new SchoolBean("申请消息",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("机构号",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("群组",null,null,R.drawable.ic_launcher_background));
+        list.add(new SchoolBean("申请消息",null,null,R.drawable.lxr1));
+        list.add(new SchoolBean("机构号",null,null,R.drawable.lxr2));
+        list.add(new SchoolBean("群组",null,null,R.drawable.lxr3));
     }
 
     private void initView(View view) {

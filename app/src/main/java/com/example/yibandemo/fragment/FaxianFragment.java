@@ -39,15 +39,15 @@ public class FaxianFragment extends Fragment {
     }
     private void initData() {
         list.clear();
-        list.add(new SchoolBean("动态",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("易瞄瞄",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("易运动",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("易班熊",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("签到",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("扫一扫",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("应用广场",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("网薪红包",null,null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("易班优客",null,null,R.drawable.ic_launcher_background));
+        list.add(new SchoolBean("动态",null,null,R.drawable.dt));
+        list.add(new SchoolBean("易瞄瞄",null,null,R.drawable.icon1));
+        list.add(new SchoolBean("易运动",null,null,R.drawable.yd));
+        list.add(new SchoolBean("易班熊",null,null,R.drawable.icon4));
+        list.add(new SchoolBean("签到",null,null,R.drawable.qd));
+        list.add(new SchoolBean("扫一扫",null,null,R.drawable.sys));
+        list.add(new SchoolBean("应用广场",null,null,R.drawable.yy));
+        list.add(new SchoolBean("网薪红包",null,null,R.drawable.hb));
+        list.add(new SchoolBean("易班优客",null,null,R.drawable.icon6));
     }
     private void initView(View view) {
         lv_faxian = view.findViewById(R.id.lv_faxian);

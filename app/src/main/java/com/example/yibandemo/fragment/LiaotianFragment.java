@@ -40,11 +40,11 @@ public class LiaotianFragment extends Fragment {
 
     private void initData() {
         list.clear();
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
+        list.add(new SchoolBean("广东职业技术学院","你好",null,R.drawable.icon2));
+        list.add(new SchoolBean("易班熊","你好",null,R.drawable.icon4));
+        list.add(new SchoolBean("粤易班",null,null,R.drawable.icon3));
+        list.add(new SchoolBean("优客",null,null,R.drawable.icon6));
+        list.add(new SchoolBean("人才招聘","我们这里有最新招聘信息",null,R.drawable.icon7));
     }
 
     private void initView(View view) {

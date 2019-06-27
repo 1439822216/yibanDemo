@@ -1,5 +1,6 @@
 package com.example.yibandemo.activity;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -21,12 +22,15 @@ import com.example.yibandemo.fragment.LiaotianFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity {
     List<Fragment> fragmentList;
     TabLayout tabLayout;
     ViewPager viewPager;
     String[] titles;
     ImageView iv_menu;
+    CircleImageView civ_touxian;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +58,20 @@ public class MainActivity extends AppCompatActivity {
                 popupMenu.show();
             }
         });
+        civ_touxian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),UserActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void intiView() {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         iv_menu = findViewById(R.id.iv_menu);
+        civ_touxian = findViewById(R.id.civ_touxian);
     }
 
     class MyFragmentAdapter extends FragmentPagerAdapter{

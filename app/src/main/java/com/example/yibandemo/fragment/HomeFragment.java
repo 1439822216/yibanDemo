@@ -96,11 +96,11 @@ public class HomeFragment extends Fragment {
         titles = new String[]{"学校","易班推荐","学院"};
         schoolBeanList = new ArrayList<>();
         schoolBeanList.clear();
-        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        schoolBeanList.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
+        schoolBeanList.add(new SchoolBean("移动172优秀人才名单！！！","今天终于迎来了优秀人才名单！",null,R.drawable.tu1));
+        schoolBeanList.add(new SchoolBean("信息系优秀班级名单公布！","大家知道第一名花落谁家吗？？",null,R.drawable.tu2));
+        schoolBeanList.add(new SchoolBean("广职院火啦，只因这样一件小事......","如题",null,R.drawable.tu3));
+        schoolBeanList.add(new SchoolBean("半年时间赚够了3年学费，他竟然这样做......","人才",null,R.drawable.tu4));
+        schoolBeanList.add(new SchoolBean("46级成绩公布啦！","大家快点击这里哦！",null,R.drawable.tu5));
     }
 
     private void intiView(View view) {

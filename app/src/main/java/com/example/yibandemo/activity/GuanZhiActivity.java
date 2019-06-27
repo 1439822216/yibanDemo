@@ -36,15 +36,15 @@ public class GuanZhiActivity extends AppCompatActivity {
 
     private void initData() {
         images.clear();
-        images.add(R.drawable.yb1);
-        images.add(R.drawable.yb1);
-        images.add(R.drawable.yb1);
+        images.add(R.drawable.lbt1);
+        images.add(R.drawable.lbt2);
+
         list.clear();
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
-        list.add(new SchoolBean("aa","aa",null,R.drawable.ic_launcher_background));
+        list.add(new SchoolBean("移动172优秀人才名单！！！","今天终于迎来了优秀人才名单！",null,R.drawable.tu1));
+        list.add(new SchoolBean("信息系优秀班级名单公布！","大家知道第一名花落谁家吗？？",null,R.drawable.tu2));
+        list.add(new SchoolBean("广职院火啦，只因这样一件小事......","如题",null,R.drawable.tu3));
+        list.add(new SchoolBean("半年时间赚够了3年学费，他竟然这样做......","人才",null,R.drawable.tu4));
+        list.add(new SchoolBean("46级成绩公布啦！","大家快点击这里哦！",null,R.drawable.tu5));
     }
 
     private void initView() {
