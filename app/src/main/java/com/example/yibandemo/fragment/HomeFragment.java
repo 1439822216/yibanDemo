@@ -2,6 +2,7 @@ package com.example.yibandemo.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -17,9 +18,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.yibandemo.R;
+import com.example.yibandemo.activity.GuanZhiActivity;
 import com.example.yibandemo.adapter.GridBaseAdapter;
 import com.example.yibandemo.adapter.SchoolAdapter2;
 import com.example.yibandemo.bean.GridBean;
@@ -42,6 +45,7 @@ public class HomeFragment extends Fragment {
     List<Fragment> list = new ArrayList<>();
     RecyclerView rv_school;
     List<SchoolBean> schoolBeanList;
+    TextView tv_gz;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -63,6 +67,13 @@ public class HomeFragment extends Fragment {
         rv_school.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv_school.setAdapter(adapter2);
         rv_school.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+        tv_gz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), GuanZhiActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -96,6 +107,7 @@ public class HomeFragment extends Fragment {
         banner = view.findViewById(R.id.banner);
         gridView = view.findViewById(R.id.gridView);
         rv_school = view.findViewById(R.id.rv_school);
+        tv_gz = view.findViewById(R.id.tv_gz);
     }
 
     class GlideImageLoader extends ImageLoader {

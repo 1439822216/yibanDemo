@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.yibandemo">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
-        <activity android:name=".activity.WebActivity"></activity>
+        <activity android:name=".activity.GuanZhiActivity"></activity>
+        <activity android:name=".activity.WebActivity" />
         <activity android:name=".activity.UserActivity" />
-        <activity android:name=".activity.SplashActivity"></activity>
+        <activity android:name=".activity.SplashActivity" />
         <activity android:name=".activity.HandlerActivity" />
         <activity android:name=".activity.GuideActivity" />
         <activity android:name=".activity.RegActivity" />
